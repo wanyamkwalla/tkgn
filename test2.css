@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+body,html,li,ol,ul,figure,h1,h2,h3,h4 {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: linear-gradient( to bottom, #DCB9FF, #EEF6FA ) no-repeat;
+    position:relative;
+    height:100vh;
+    background-attachment:fixed;
+    overflow:hidden;
+}
+ul,li{list-style: none;}
+a{text-decoration: none;}
+img,a{display:block;}
+
+
+
+@keyframes rotate{
+0%{
+transform:perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
+}
+100%{
+transform:perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
+}
+}
+.stars{
+transform:perspective(500px);
+transform-style:preserve-3d;
+position:absolute;
+bottom:0;
+perspective-origin:50% 100%;
+left:50%;
+animation:rotate 90s infinite linear;
+}
+.star{
+width:2px;
+height:2px;
+background:#ffd6d6;
+border-radius:100%;
+position:absolute;
+top:0;
+left:0;
+transform-origin:0 0 -300px;
+transform:translate3d(0,0,-300px);
+backface-visibility:hidden;
+z-index: 0;
+}
+
+.clearFix::after {
+    content: '';
+    clear: both;
+}
+.fl {
+    width: 49.5%;
+    float: left;
+    text-align: center;
+}
+.fr {
+    width: 49.5%;
+    float: right;
+    text-align: center;
+}
+.testArea h2{ font-size:1.25em;}
+
+.test{
+    width:70%;
+    margin:auto;
+}
+.test p{ font-size:.9em; }
+
+.testArea{
+    padding:2.5% 0;
+    text-align: center;
+}
+
+figure{
+    max-width: 800px;
+    margin:auto;
+    z-index:5;
+}
+figure img{width:100%;}
+
+
+@media only screen and (max-width: 747px){
+    .test{width:95%;}
+}
